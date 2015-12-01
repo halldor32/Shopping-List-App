@@ -44,12 +44,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //    bæta við nýju item í listann
-    public void addToList(ShoppingList item) {
+    public void addToList(String item) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_TEXT, item.getText());
+        values.put(KEY_TEXT, item);
 
 
         db.insert(TABLE_LISTS, null, values);
